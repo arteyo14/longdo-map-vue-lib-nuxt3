@@ -9,7 +9,7 @@ onMounted(() => {
   }, 300);
 });
 
-onUnmounted(() => store.$dispose);
+onUnmounted(() => store.$dispose());
 </script>
 <template>
   <div class="flex justify-center my-8 w-[95%] h-[80vh] mx-auto">
