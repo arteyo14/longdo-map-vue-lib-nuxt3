@@ -27,6 +27,9 @@
         <li>
           <NuxtLink to="/cluster">Cluster</NuxtLink>
         </li>
+        <li>
+          <NuxtLink to="/rainviewer">RainViewer</NuxtLink>
+        </li>
       </ul>
     </div>
   </div>
