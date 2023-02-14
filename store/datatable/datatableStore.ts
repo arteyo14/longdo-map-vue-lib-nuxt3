@@ -8,6 +8,7 @@ export const useDataTableStore = defineStore("dataTableStore", {
       lon: 100.51732790995302,
       lat: 13.814726244686398,
     },
+    dataSelected: 0,
   }),
   actions: {
     getMap(map: any) {
@@ -16,6 +17,11 @@ export const useDataTableStore = defineStore("dataTableStore", {
       });
 
       this.createLine();
+    },
+    toggleDataSelected(item: roadData) {
+      this.$patch((state) => {
+        (state.dataSelected = item.id), this.getPositions(item);
+      });
     },
     positionsChanged(state: any) {
       if (this.map) {
