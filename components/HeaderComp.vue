@@ -24,6 +24,9 @@
         <li>
           <NuxtLink to="/heatmap">HeatMap</NuxtLink>
         </li>
+        <li>
+          <NuxtLink to="/cluster">Cluster</NuxtLink>
+        </li>
       </ul>
     </div>
   </div>

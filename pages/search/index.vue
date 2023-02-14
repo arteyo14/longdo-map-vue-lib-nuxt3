@@ -3,7 +3,6 @@ import { useSearchStore } from "~~/store/search/searchStore";
 
 const store = useSearchStore();
 
-// onMounted(store.createSearch);
 onUnmounted(() => store.$dispose());
 </script>
 
