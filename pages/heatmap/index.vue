@@ -13,7 +13,7 @@ onUnmounted(() => store.$dispose());
 </script>
 
 <template>
-  <div class="flex justify-center w=[90%] mx-auto my-8">
+  <div class="flex justify-center w-[95%] mx-auto my-8">
     <longdo-map class="h-[80vh] w-full" @load="store.getMap" />
   </div>
 </template>

@@ -15,8 +15,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="w-[95%] mx-auto my-8 flex justify-center gap-10">
-    <div>
+  <div class="w-[95%] mx-auto my-8 flex justify-center gap-8">
+    <div class="w-[60%]">
       <table class="table .table-hover">
         <thead class="thead-dark">
           <tr class="text-center">
@@ -49,6 +49,6 @@ onUnmounted(() => {
         </tbody>
       </table>
     </div>
-    <longdo-map class="w-[40%] h-[80vh]" @load="store.getMap" />
+    <longdo-map class="w-[100%] h-[80vh]" @load="store.getMap" />
   </div>
 </template>
