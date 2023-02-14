@@ -9,6 +9,7 @@ export const useSearchStore = defineStore("searchStore", {
       this.$patch((state) => {
         state.map = map;
       });
+
       this.createSearch();
     },
     createSearch() {

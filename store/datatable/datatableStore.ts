@@ -1,11 +1,9 @@
 import { defineStore } from "pinia";
-import { Coordinator } from "../mapStore";
 import { roadData, roadDataTable as data } from "~/public/ts/roadtable";
 
 export const useDataTableStore = defineStore("dataTableStore", {
   state: () => ({
     map: null as any,
-    longDo: window.longdo,
     positions: {
       lon: 100.51732790995302,
       lat: 13.814726244686398,
@@ -16,6 +14,7 @@ export const useDataTableStore = defineStore("dataTableStore", {
       this.$patch((state) => {
         state.map = map;
       });
+
       this.createLine();
     },
     positionsChanged(state: any) {
@@ -25,6 +24,7 @@ export const useDataTableStore = defineStore("dataTableStore", {
           lat: state.lat,
         });
       }
+
       this.map.zoom(18);
     },
     getPositions(item: roadData) {
@@ -35,6 +35,7 @@ export const useDataTableStore = defineStore("dataTableStore", {
     },
     createLine() {
       const longdo = window.longdo;
+
       const polyline = new longdo.Polyline(
         data.map(
           (item) => {
@@ -47,6 +48,7 @@ export const useDataTableStore = defineStore("dataTableStore", {
           }
         )
       );
+
       this.map.Overlays.add(polyline);
     },
   },

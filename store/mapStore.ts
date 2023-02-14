@@ -10,8 +10,6 @@ export type Coordinator = {
 export const useMapStore = defineStore("mapStore", {
   state: () => ({
     map: null as any,
-    showWMS: false as any,
-    showTMS: false as any,
   }),
   actions: {
     getMap(map: any) {
@@ -25,14 +23,15 @@ export const useMapStore = defineStore("mapStore", {
     },
     addRoute() {
       const longdo = window.longdo;
+
       const lineArray = Line.map((item) => {
-        // console.log(item);
         return longdo.Util.overlayFromWkt(item);
       });
 
       const addRoad = lineArray.map((item: any) => {
         return this.map.Overlays.add(item[0]);
       });
+
       return addRoad;
     },
     addShoppingTags() {
@@ -42,6 +41,7 @@ export const useMapStore = defineStore("mapStore", {
     },
     createMapUi() {
       const longdo = window.longdo;
+
       const menu = new longdo.MenuBar({
         dropdown: [{ label: "WMS" }, { label: "TMS" }, { label: "Clear" }],
         dropdownLabel: "Data",
@@ -55,6 +55,7 @@ export const useMapStore = defineStore("mapStore", {
     },
     createWMS(item1: any) {
       const longdo = window.longdo;
+
       const WMS = new longdo.Layer("bluemarble_terrain", {
         type: longdo.LayerType.WMS,
         url: "https://ms.longdo.com/mapproxy/service",
